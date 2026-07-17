@@ -1,0 +1,181 @@
+[bar.default]
+background_opacity = 0.39999999105930328
+capsule_radius = 1
+end = [ "media", "tray", "brightness", "volume", "network", "notifications" ]
+font_family = "JetBrains Mono NL ExtraBold"
+font_weight = 800
+padding = 10
+radius = 1
+radius_bottom_left = 2
+radius_bottom_right = 2
+radius_top_left = 2
+radius_top_right = 2
+scale = 0.85000000521540642
+shadow = false
+start = [ "workspaces", "active_window" ]
+thickness = 22
+widget_spacing = 10
+
+[brightness]
+enable_ddcutil = true
+
+[control_center]
+shortcuts = []
+sidebar_section = "full"
+
+[desktop_widgets]
+enabled = false
+
+[dock]
+launcher_position = "start"
+
+[location]
+auto_locate = true
+
+[lockscreen]
+blurred_desktop = true
+
+[lockscreen_widgets]
+enabled = false
+schema_version = 2
+widget_order = [ "lockscreen-login-box@DP-1" ]
+
+    [lockscreen_widgets.grid]
+    cell_size = 16
+    major_interval = 4
+    visible = true
+
+    [lockscreen_widgets.widget."lockscreen-login-box@DP-1"]
+    box_height = 70.0
+    box_width = 400.0
+    cx = 960.0
+    cy = 961.0
+    output = "DP-1"
+    rotation = 0.0
+    type = "login_box"
+
+        [lockscreen_widgets.widget."lockscreen-login-box@DP-1".settings]
+        background_color = "surface_variant"
+        background_opacity = 0.88
+        background_radius = 12.0
+        input_opacity = 1.0
+        input_radius = 6.0
+        show_login_button = true
+
+[nightlight]
+enabled = true
+temperature_day = 6300
+temperature_night = 5100
+
+[osd]
+background_opacity = 0.99999997764825821
+
+    [osd.kinds]
+    media = false
+
+[plugin_settings."noctalia/screen_recorder"]
+color_range = "full"
+video_source = "focused"
+
+[plugins]
+enabled = []
+
+[shell]
+corner_radius_scale = 0.0
+font_family = "JetBrains Mono"
+password_style = "random"
+polkit_agent = true
+ui_scale = 0.80000000447034836
+
+    [shell.launcher]
+    categories = false
+    compact = true
+
+    [shell.mpris]
+    blacklist = [ "zen", "Zen Browser" ]
+
+    [shell.panel]
+    borders = false
+    floating_offset = 10
+    open_near_click_control_center = true
+    shadow = false
+
+    [shell.screen_corners]
+    size = 13
+
+[system.monitor]
+enabled = false
+
+[theme]
+builtin = "Nord"
+community_palette = "Everforest"
+mode = "dark"
+source = "wallpaper"
+wallpaper_scheme = "muted"
+
+    [theme.templates]
+    builtin_ids = [ "btop", "cava", "gtk3", "gtk4", "hyprland", "kcolorscheme", "kitty", "qt" ]
+    community_ids = [ "discord", "obs", "prismlauncher", "steam", "yazi", "hyprtoolkit" ]
+
+[wallpaper]
+directory = "/home/ingot/Pictures/wallpapers"
+transition = [ "fade", "zoom" ]
+transition_on_startup = true
+
+    [wallpaper.default]
+    path = "/home/ingot/Pictures/wallpapers/Screenshot from 2026-06-20 23-41-51.png"
+
+    [wallpaper.last]
+    path = "/home/ingot/Pictures/wallpapers/Screenshot from 2026-06-20 23-41-51.png"
+
+    [wallpaper.monitors.DP-1]
+    path = "/home/ingot/Pictures/wallpapers/Screenshot from 2026-06-20 23-41-51.png"
+
+    [[wallpaper.favorite]]
+    palette_source = "wallpaper"
+    path = "/home/ingot/Pictures/wallpapers/wallhaven-4yk1k7_1920x1080.png"
+    theme_mode = "dark"
+    wallpaper_scheme = "muted"
+
+[weather]
+refresh_minutes = 5
+
+[widget.active_window]
+display = "text_only"
+icon_size = 8
+max_length = 250
+min_length = 0
+
+[widget.audio_visualizer]
+bands = 128
+
+[widget.brightness]
+show_label = false
+
+[widget.clock]
+capsule_radius = 5
+format = "{:%H:%M:%S - %d.%m.%y}"
+
+[widget.media]
+art_size = 96
+hide_album_art = true
+hide_when_no_media = true
+max_length = 250
+min_length = 0
+title_scroll = "on_hover"
+
+[widget.network]
+show_label = false
+
+[widget.tray]
+drawer = true
+
+[widget.volume]
+show_label = false
+
+[widget.workspaces]
+active_pill_size = 2.0
+capsule_opacity = 0.78000000000000003
+capsule_radius = 3
+display = "name"
+max_label_chars = 20
