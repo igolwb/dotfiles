@@ -3,7 +3,7 @@
 require("config.animations")
 require("config.autostart")
 require("config.decorations")
-require("config.defaults")
+require("config.variables")
 require("config.environment")
 require("config.input")
 require("config.keybinds")

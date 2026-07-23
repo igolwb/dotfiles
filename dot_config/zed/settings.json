@@ -1,0 +1,102 @@
+// Zed settings
+//
+// For information on how to configure Zed, see the Zed
+// documentation: https://zed.dev/docs/configuring-zed
+//
+// To see all of Zed's default settings without changing your
+// custom settings, run `zed: open default settings` from the
+// command palette (cmd-shift-p / ctrl-shift-p)
+{
+  "edit_predictions": {
+    "mode": "subtle"
+  },
+  "show_edit_predictions": false,
+  "search": {
+    "button": true
+  },
+  "show_wrap_guides": true,
+  "active_pane_modifiers": {
+    "border_size": 1.0,
+    "inactive_opacity": 1.0
+  },
+  "title_bar": {
+    "show_branch_name": true,
+    "show_project_items": true,
+    "show_onboarding_banner": true,
+    "show_sign_in": true,
+    "show_user_menu": true,
+    "show_user_picture": true,
+    "show_menus": false,
+    "show_branch_status_icon": true
+  },
+  "vim_mode": false,
+  "proxy": "",
+  "bottom_dock_layout": "contained",
+  "tabs": {
+    "git_status": false,
+    "close_position": "right",
+    "file_icons": false
+  },
+  "tab_bar": {
+    "show_tab_bar_buttons": true,
+    "show": true
+  },
+  "debugger": {
+    "button": false
+  },
+  "diagnostics": {
+    "button": true
+  },
+  "terminal": {
+    "button": false
+  },
+  "status_bar": {
+    "cursor_position_button": false,
+    "active_language_button": false
+  },
+  "autosave": "off",
+  "agent_ui_font_size": 9.0,
+  "agent_buffer_font_size": 9.0,
+  "agent": {
+    "dock": "right",
+    "favorite_models": [],
+    "model_parameters": []
+  },
+  "git_panel": {
+    "tree_view": true,
+    "dock": "left"
+  },
+  "text_rendering_mode": "platform_default",
+  "ui_font_weight": 600.0,
+  "ui_font_family": "JetBrains Mono",
+  "buffer_line_height": "comfortable",
+  "buffer_font_weight": 600.0,
+  "buffer_font_family": "JetBrains Mono NL",
+  "cli_default_open_behavior": "existing_window",
+  "project_panel": {
+    "default_width": 150.0,
+    "button": true,
+    "hide_root": true,
+    "indent_size": 10.0,
+    "folder_icons": false,
+    "file_icons": true,
+    "entry_spacing": "standard",
+    "dock": "left"
+  },
+  "icon_theme": "Material Icon Theme",
+  "agent_servers": {
+    "cursor": {
+      "type": "registry"
+    },
+    "github-copilot-cli": {
+      "type": "registry"
+    }
+  },
+  "ui_font_size": 11.0,
+  "buffer_font_size": 11.0,
+  "theme": {
+    "mode": "dark",
+    "light": "Old Book",
+    "dark": "Noctalia Dark Transparent",
+  },
+}

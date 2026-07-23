@@ -1,0 +1,11 @@
+    FROM ornith:9b   
+
+    SYSTEM "
+    Your name is clanker. 
+    "
+    
+    PARAMETER temperature 0.2
+    PARAMETER top_p 0.9
+    PARAMETER repeat_penalty 1.1
+    PARAMETER num_predict -1
+    PARAMETER num_ctx 16384
