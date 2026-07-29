@@ -79,7 +79,7 @@
   },
   "text_rendering_mode": "platform_default",
   "ui_font_weight": 600.0,
-  "ui_font_family": "JetBrains Mono",
+  "ui_font_family": "Maple Mono NF",
   "buffer_line_height": "comfortable",
   "buffer_font_weight": 500.0,
   "buffer_font_family": "Maple Mono NF",
@@ -111,3 +111,4 @@
     "dark": "Noctalia Dark Transparent",
   },
 }
+
