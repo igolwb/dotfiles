@@ -48,7 +48,9 @@
     "button": true
   },
   "terminal": {
-    "button": false
+    "default_height": 200.0,
+    "flexible": true,
+    "button": true
   },
   "status_bar": {
     "cursor_position_button": false,
@@ -58,7 +60,16 @@
   "agent_ui_font_size": 9.0,
   "agent_buffer_font_size": 9.0,
   "agent": {
-    "dock": "right",
+    "default_height": 200.0,
+    "sandbox_permissions": {
+      "allow_all_hosts": true
+    },
+    "default_model": {
+      "provider": "ollama",
+      "model": "ornith-coder:latest",
+      "enable_thinking": true
+    },
+    "dock": "bottom",
     "favorite_models": [],
     "model_parameters": []
   },
@@ -70,8 +81,8 @@
   "ui_font_weight": 600.0,
   "ui_font_family": "JetBrains Mono",
   "buffer_line_height": "comfortable",
-  "buffer_font_weight": 600.0,
-  "buffer_font_family": "JetBrains Mono NL",
+  "buffer_font_weight": 500.0,
+  "buffer_font_family": "Maple Mono NF",
   "cli_default_open_behavior": "existing_window",
   "project_panel": {
     "default_width": 150.0,
@@ -83,7 +94,7 @@
     "entry_spacing": "standard",
     "dock": "left"
   },
-  "icon_theme": "Material Icon Theme",
+  "icon_theme": "Zed (Default)",
   "agent_servers": {
     "cursor": {
       "type": "registry"

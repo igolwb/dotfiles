@@ -25,9 +25,9 @@ hl.animation({ leaf = "windowsMove", enabled = true, speed = 1, spring = "spring
 
 hl.animation({ leaf = "fadeIn", enabled = true, speed = 4, bezier = "emphasizedDecel" })
 
-hl.animation({ leaf = "fadeOut", enabled = true, speed = 3, bezier = "standardDecel" })
+hl.animation({ leaf = "fadeOut", enabled = true, speed = 2, bezier = "standardDecel" })
 
-hl.animation({ leaf = "border", enabled = true, speed = 15, bezier = "emphasizedDecel" })
+hl.animation({ leaf = "border", enabled = true, speed = 20, bezier = "emphasizedDecel" })
 
 -- layers
 hl.animation({ leaf = "layersIn", enabled = true, speed = 2.7, spring = "spring_window", style = "popin 93%" })

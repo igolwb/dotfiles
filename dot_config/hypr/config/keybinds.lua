@@ -21,7 +21,7 @@ local function layout_bind(bind_table)
 	end
 end
 ---------------------------
----- WINDOW MANAGEMENT ----
+---- window management ----
 ---------------------------
 
 hl.bind(mainMod .. " + Escape", hl.dsp.exec_cmd("hyprctl kill"))
@@ -58,7 +58,7 @@ hl.bind(mainMod .. " + Up", hl.dsp.focus({ direction = "up" }))
 hl.bind(mainMod .. " + Down", hl.dsp.focus({ direction = "down" }))
 hl.bind("ALT + Tab", hl.dsp.window.cycle_next())
 
--- Move active window around workspaces & monitors
+-- move active window around workspaces & monitors
 
 hl.bind(mainMod .. " + SHIFT + left", hl.dsp.window.move({ direction = "l" }))
 hl.bind(mainMod .. " + SHIFT + Right", hl.dsp.window.move({ direction = "r" }))
@@ -78,18 +78,18 @@ for i = 1, NUM_WPM do
 	hl.bind(mainMod .. " + SHIFT + CONTROL + " .. key, hl.dsp.window.move({ workspace = "m~" .. i }))
 end
 
--- Move to adjacent workspaces and next empty on a given monitor
+-- move to adjacent workspaces and next empty on a given monitor
 hl.bind(mainMod .. " + CONTROL + Right", hl.dsp.focus({ workspace = "m+1" }))
 hl.bind(mainMod .. " + CONTROL + Left", hl.dsp.focus({ workspace = "m-1" }))
 hl.bind(mainMod .. " + CONTROL + Down", hl.dsp.focus({ workspace = "emptym" }))
 
--- Scroll through existing workspaces & monitors
+-- scroll through existing workspaces & monitors
 hl.bind(mainMod .. " + mouse_down", hl.dsp.focus({ workspace = "m+1" }))
 hl.bind(mainMod .. " + mouse_up", hl.dsp.focus({ workspace = "m-1" }))
 hl.bind(mainMod .. " + CONTROL + mouse_up", hl.dsp.focus({ workspace = "m+1" }))
 hl.bind(mainMod .. " + CONTROL + mouse_down", hl.dsp.focus({ workspace = "m-1" }))
 
--- Move & Resize with mouse
+-- move & Resize with mouse
 hl.bind(mainMod .. " + mouse:272", hl.dsp.window.drag())
 hl.bind(mainMod .. " + mouse:273", hl.dsp.window.resize())
 
@@ -99,11 +99,11 @@ hl.bind(mainMod .. " + equal", hl.dsp.window.resize({ x = 0, y = 10, relative = 
 hl.bind(mainMod .. " + minus", hl.dsp.window.resize({ x = 0, y = -10, relative = true }), { repeating = true })
 
 ------------------
----- LAUNCHER ----
+---- launcher ---
 ------------------
 
 hl.bind(mainMod .. " + T", hl.dsp.exec_cmd(launchPrefix .. TERMINAL))
-hl.bind(mainMod .. " + D", hl.dsp.exec_cmd(launchPrefix .. FILE_MANAGER))
+hl.bind(mainMod .. " + D", hl.dsp.exec_cmd(launchPrefix .. TERMINAL .. " -e yazi"))
 hl.bind(mainMod .. " + E", hl.dsp.exec_cmd(launchPrefix .. EDITOR))
 hl.bind(mainMod .. " + W", hl.dsp.exec_cmd(launchPrefix .. BROWSER))
 hl.bind("CONTROL + SHIFT + Escape", hl.dsp.exec_cmd(launchPrefix .. TERMINAL .. " -e btop"))
@@ -111,16 +111,17 @@ hl.bind(mainMod .. "+Space", hl.dsp.exec_cmd(ipc .. "panel-toggle launcher"))
 hl.bind(mainMod .. " + ALT + L", hl.dsp.exec_cmd(ipc .. "session lock"))
 hl.bind(mainMod .. " + B", hl.dsp.exec_cmd(ipc .. "bar-toggle"))
 hl.bind(mainMod .. " + X", hl.dsp.exec_cmd(ipc .. "panel-toggle control-center"))
+hl.bind(mainMod .. " + N", hl.dsp.exec_cmd(ipc .. "panel-toggle control-center notifications"))
 hl.bind(mainMod .. " + V", hl.dsp.exec_cmd(ipc .. "panel-toggle control-center audio"))
 hl.bind(mainMod .. " + ALT + C", hl.dsp.exec_cmd(ipc .. "panel-toggle session"))
 hl.bind(mainMod .. " + Z", hl.dsp.exec_cmd(ipc .. "settings-toggle"))
 hl.bind("ALT + Tab", hl.dsp.exec_cmd(ipc .. "window-switcher"))
 
 ---------------------------
----- HARDWARE CONTROLS ----
+---- hardware controls ----
 ---------------------------
 
--- Audio
+-- audio
 
 -- Media
 hl.bind(mainMod .. " + A", hl.dsp.exec_cmd(ipc .. "media toggle"), { locked = true })
