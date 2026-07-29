@@ -539,19 +539,8 @@ source = "wallpaper"
 wallpaper_scheme = "muted"
 
     [theme.templates]
-    builtin_ids = [ "btop", "cava", "gtk3", "gtk4", "hyprland", "kcolorscheme", "kitty", "qt", "starship" ]
-    community_ids = [
-        "zed",
-        "discord",
-        "heroiclauncher",
-        "lazygit",
-        "obs",
-        "opencode",
-        "prismlauncher",
-        "steam",
-        "yazi",
-        "hyprtoolkit"
-    ]
+    builtin_ids = [ "btop", "cava", "gtk3", "gtk4", "hyprland", "kcolorscheme", "kitty", "qt" ]
+    community_ids = [ "discord", "zed", "heroiclauncher", "prismlauncher", "steam", "obs", "hyprtoolkit", "lazygit", "yazi" ]
     enable_builtin_templates = true
     enable_community_templates = true
 
@@ -564,7 +553,7 @@ enabled = true
 fill_color = ""
 fill_mode = "crop"
 per_monitor_directories = false
-transition = [ "disc", "fade", "honeycomb", "wipe", "zoom" ]
+transition = [ "fade", "zoom" ]
 transition_duration = 1500.0
 transition_on_startup = true
 
