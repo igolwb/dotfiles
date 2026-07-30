@@ -1,26 +1,26 @@
 # My dotfiles setup
 
-This is my first linux rice and after spending plenty of time tweaking it to my needs, learning how to rice and getting confused on what to use i have reached a point were i am satisfied with the result
+This is my first Linux rice and after spending plenty of time tweaking it to my needs, learning how to rice and getting confused on what to use i have reached a point were i am satisfied with the result
 
 This setup is supposed to be comfortable and productive, although im jealous of other rices with huge window gaps i wanted to maximize the space available for windows, so i could have more space for text on my code editor
 
-One day when im more experienced on ricing linux i want to get rid noctalia and configure everything that it does separetely (rofi, waybar, matugen, swaybg, etc), not because noctalia is bad, it is very good and optimized, but for the experience and the flexibility, also that i can make my own matugen themes for apps that noctalia doesn't have templates
+One day when im more experienced on ricing Linux i want to get rid noctalia and configure everything that it does separetely (rofi, waybar, matugen, swaybg, etc), not because noctalia is bad, it is very good and optimized, but for the experience and the flexibility, also that i can make my own matugen themes for apps that noctalia doesn't have templates
 
-##Showcase
+## Showcase
 <p align="center">
-  <img src="./showcase/showcase1" style="width: 100%;">
+  <img src="./showcase/showcase1.png" style="width: 100%;">
 </p>
 
 <p align="center">
-  <img src="./showcase/showcase2" style="width: 100%;">
+  <img src="./showcase/showcase2.png" style="width: 100%;">
 </p>
 
 <p align="center">
-  <img src="./showcase/showcase3" style="width: 100%;">
+  <img src="./showcase/showcase3.png" style="width: 100%;">
 </p>
 
 <p align="center">
-  <img src="./showcase/showcase4" style="width: 100%;">
+  <img src="./showcase/showcase4.png" style="width: 100%;">
 </p>
 
 
