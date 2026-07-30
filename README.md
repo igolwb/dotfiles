@@ -50,6 +50,6 @@ chezmoi init https://github.com/igolwb/dotfiles.git
 chezmoi apply -v
 ```
 
-## Post Installation
+After applying the config you'll need to configure your keyboard and monitor at [inputs.lua](https://github.com/igolwb/dotfiles/blob/main/dot_config/hypr/config/inputs.lua) and [monitors.lua](https://github.com/igolwb/dotfiles/blob/main/dot_config/hypr/config/monitors.lua)
 
-After applying the config you'll need to configure your monitor and keyboard at ~/.config/hypr/config/inputs.lua and ~/.config/hypr/config/monitors.lua
+Also you can delete the chezmoi repo at ~/.local/share/chezmoi and the showcase screenshots at ~/showcase
