@@ -52,4 +52,4 @@ chezmoi apply -v
 
 ## Post Installation
 
-After applying the config you'll need to configure your monitor and keyboard at "~/.config/hypr/config/inputs.lua" and "~/.config/hypr/config/monitors.lua"
+After applying the config you'll need to configure your monitor and keyboard at ~/.config/hypr/config/inputs.lua and ~/.config/hypr/config/monitors.lua
