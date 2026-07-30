@@ -37,7 +37,7 @@ List of important dependencies to know before applying the config:
 This is based on what packages already are installed in cachyOS, you can just remove any packages you don't need before running
 
 ``` bash
-sudo pacman -S yay chezmoi zed zen-browser spotify-launcher yazi lazygit lazydocker ddcutil nvim httpie tmux vesktop prismlauncher lact
+sudo pacman -S yay chezmoi zed zen-browser spotify-launcher yazi lazygit lazydocker ddcutil nvim httpie tmux vesktop prismlauncher lact protonup-qt
 ```
 
 After installing the packages you can apply it using chezmoi, or by just cloning the repo and overwriting your ~/.config

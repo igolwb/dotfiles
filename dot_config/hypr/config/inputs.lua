@@ -3,7 +3,7 @@
 hl.config({
     input = {
         -- sensitivity = -0.25,
-        -- accel_profile = "flat",
+        accel_profile = "flat",
         -- kb_layout = "br",
         -- kb_variant = "nodeadkeys"
     },
