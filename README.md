@@ -1,6 +1,6 @@
 # My Dotfiles Setup
 
-This is my first Linux rice and after spending plenty of time tweaking it to my needs, learning how to rice and getting confused on what to use i have reached a point were i am satisfied with the result
+This is my first Linux rice and after spending plenty of time tweaking it to my needs, learning how to rice and getting confused on what to use i have reached a point where i am satisfied with the result
 
 This setup is supposed to be comfortable and productive, although im jealous of other rices with huge window gaps i wanted to maximize the space available for windows, so i could have more space for text on my code editor
 
