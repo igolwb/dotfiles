@@ -1,4 +1,4 @@
-# My dotfiles setup
+# My Dotfiles Setup
 
 This is my first Linux rice and after spending plenty of time tweaking it to my needs, learning how to rice and getting confused on what to use i have reached a point were i am satisfied with the result
 
@@ -25,17 +25,31 @@ One day when im more experienced on ricing Linux i want to get rid noctalia and 
 
 
 ## Dependencies
-list of important dependencies to know before applying the config:
+List of important dependencies to know before applying the config:
 
-[hyprland 0.55+](https://github.com/hyprwm/Hyprland)
-[Noctalia V5.0.0beta1+](https://github.com/noctalia-dev/noctalia)
-[Mapple Mono NF](https://github.com/subframe7536/maple-font)
+[hyprland 0.55+](https://github.com/hyprwm/Hyprland), 
+[Noctalia V5.0.0beta1+](https://github.com/noctalia-dev/noctalia), 
+[Mapple Mono NF](https://github.com/subframe7536/maple-font), 
 
 
-## Installing packages i use
+## Installing Packages & Applying Config
 
-this is based on what packages already have been installed by cachyOS, you can just remove any packages you don't need before running
+This is based on what packages already are installed in cachyOS, you can just remove any packages you don't need before running
 
 ``` bash
-sudo pacman -S yay zed zen spotify-launcher yazi lazygit lazydocker ddcutil nvim httpie tmux vesktop nemo prismlauncher lact
+sudo pacman -S yay chezmoi zed zen-browser spotify-launcher yazi lazygit lazydocker ddcutil nvim httpie tmux vesktop prismlauncher lact
 ```
+
+After installing the packages you can apply it using chezmoi, or by just cloning the repo and overwriting your ~/.config
+
+```bash
+chezmoi init https://github.com/igolwb/dotfiles.git
+```
+
+```bash
+chezmoi apply -v
+```
+
+## Post Installation
+
+After applying the config you'll need to configure your monitor and keyboard at "~/.config/hypr/config/inputs.lua" and "~/.config/hypr/config/monitors.lua"
