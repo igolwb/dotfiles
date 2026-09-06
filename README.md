@@ -19,10 +19,6 @@ One day when im more experienced on ricing Linux i want to get rid noctalia and 
   <img src="./showcase/showcase3.png" style="width: 100%;">
 </p>
 
-<p align="center">
-  <img src="./showcase/showcase4.png" style="width: 100%;">
-</p>
-
 
 ## Dependencies
 List of important dependencies to know before applying the config:
