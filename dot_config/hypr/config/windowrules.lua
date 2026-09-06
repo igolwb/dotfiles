@@ -9,37 +9,47 @@ hl.window_rule({
 })
 
 -- Gaming
-local gamingApps = "^(steam_app.*|gamescope)$"
+local gamingApps = "^(steam_app.*|gamescope|Minecraft .*)$"
 local gamingWorkspace = "name:game"
 
-
 hl.window_rule({ match = { content = "game" }, workspace = gamingWorkspace })
-hl.window_rule({ match = { xdg_tag = "^(.*game.*)$" }, workspace = gamingWorkspace, fullscreen_state = 2, content = "game", sync_fullscreen = true })
+hl.window_rule({
+	match = { xdg_tag = "^(.*game.*)$" },
+	workspace = gamingWorkspace,
+	fullscreen_state = 2,
+	content = "game",
+	sync_fullscreen = true,
+})
 hl.window_rule({ match = { class = gamingApps }, workspace = gamingWorkspace })
 hl.window_rule({ match = { class = "^(steam)$", title = "^(Friends List)$" }, float = true })
-hl.window_rule({ match = { class = "^(steam)$", title = "^(Launching\\.{3})$" }, float = true, center = true, workspace = gamingWorkspace })
 hl.window_rule({
-    match = {
-        class         = gamingApps,
-        title         = "^(.+)$",
-        initial_title = "negative:^(.*\\\\home\\\\.*)$",
-    },
-    content          = "game",
-    decorate         = false,
-    fullscreen_state = 2,
-    size             = { "monitor_w", "monitor_h" },
-    sync_fullscreen  = true,
+	match = { class = "^(steam)$", title = "^(Launching\\.{3})$" },
+	float = true,
+	center = true,
+	workspace = gamingWorkspace,
 })
 hl.window_rule({
-    match = {
-        class         = "^(steam_app.*)$",
-        initial_title = "^$",
-    },
-    center           = true,
-    float            = true,
-    fullscreen       = false,
-    fullscreen_state = 0,
-    workspace        = gamingWorkspace,
+	match = {
+		class = gamingApps,
+		title = "^(.+)$",
+		initial_title = "negative:^(.*\\\\home\\\\.*)$",
+	},
+	content = "game",
+	decorate = false,
+	fullscreen_state = 2,
+	size = { "monitor_w", "monitor_h" },
+	sync_fullscreen = true,
+})
+hl.window_rule({
+	match = {
+		class = "^(steam_app.*)$",
+		initial_title = "^$",
+	},
+	center = true,
+	float = true,
+	fullscreen = false,
+	fullscreen_state = 0,
+	workspace = gamingWorkspace,
 })
 hl.window_rule({
 	match = {
@@ -73,7 +83,7 @@ hl.window_rule({
 -- Float Utility Windows
 local floatApps = {
 	{ class = "^(kvantummanager|qt[56]ct|nwg-look)$" },
-	{ class = "^(org.pulseaudio.pavucontrol|blueman-manager|nm-applet|nm-connection-editor)$" },
+	{ class = "^(org.pulseaudio.pavucontrol|blueman-manager|nm-applet|nm-connection-editor|goverlay)$" },
 	{ title = "^(Winetricks.*|Protontricks.*)$" },
 }
 for _, m in ipairs(floatApps) do
@@ -128,8 +138,7 @@ hl.layer_rule({
 		namespace = "^noctalia-(bar-.+|notification|dock|panel|attached-panel|osd|window-switcher)$",
 	},
 	no_anim = true,
-	ignore_alpha = 0.5,
+	ignore_alpha = 0.3,
 	blur = true,
 	blur_popups = true,
 })
-

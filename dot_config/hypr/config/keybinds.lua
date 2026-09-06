@@ -145,6 +145,7 @@ hl.bind(mainMod .. " + P", hl.dsp.exec_cmd(ipc .. " screenshot-region"))
 
 -- Theming and Wallpaper
 hl.bind(mainMod .. " + SHIFT + W", hl.dsp.exec_cmd(ipc .. " panel-toggle launcher /wall "))
+hl.bind(mainMod .. " + SHIFT + X", hl.dsp.exec_cmd(ipc .. " wallpaper-random"))
 
 -- Clipboard
 hl.bind(mainMod .. " + C", hl.dsp.exec_cmd(ipc .. " panel-toggle clipboard"))
@@ -205,6 +206,3 @@ hl.bind("SUPER + Tab", function()
 	end
 end)
 
--- Special workspace (scratchpad)
-hl.bind(mainMod .. " + SHIFT + S", hl.dsp.window.move({ workspace = "special" }))
-hl.bind(mainMod .. " + S", hl.dsp.workspace.toggle_special())

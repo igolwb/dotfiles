@@ -4,10 +4,7 @@
 
 hl.monitor({
     output   = "",
-
- --change the 30 to your monitor refresh rate
-    mode     = "1920x1080@60",
-
+    mode     = "1920x1080@100",
  position = "auto",
  scale    = "auto",
 })
