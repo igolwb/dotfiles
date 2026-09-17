@@ -33,13 +33,13 @@ order = [ "default" ]
     concave_edge_corners = false
     contact_shadow = false
     enabled = true
-    end = [ "media", "volume", "network", "battery", "notifications" ]
+    end = [ "media", "volume", "network", "notifications", "battery" ]
     font_family = "Maple Mono NF"
     font_weight = 800
-    hover_highlight = false
+    hover_highlight = true
     layer = "top"
-    margin_edge = 7
-    margin_ends = 0
+    margin_edge = 6
+    margin_ends = 7
     margin_opposite_edge = 0
     padding = 10
     panel_overlap = 0
@@ -56,7 +56,7 @@ order = [ "default" ]
     smart_auto_hide = false
     start = [ "workspaces" ]
     thickness = 16
-    widget_spacing = 8
+    widget_spacing = 13
 
 [battery]
 warning_threshold = 10
@@ -97,17 +97,17 @@ active_scale = 1.0
 auto_hide = false
 background_opacity = 0.39999999105930328
 border = "outline"
-border_width = 1.0
+border_width = 1.5
 concave_edge_corners = false
 cross_axis_padding = 3
 enabled = false
-icon_size = 24
+icon_size = 30
 inactive_opacity = 0.99999997764825821
 inactive_scale = 1.0
 item_spacing = 0
 launcher_custom_image = ""
 launcher_custom_image_colorize = false
-launcher_icon = "grid-dots"
+launcher_icon = "brand-finder"
 launcher_position = "start"
 magnification = true
 magnification_scale = 1.2500000037252903
@@ -118,10 +118,10 @@ monitors = []
 pinned = []
 position = "bottom"
 radius = 0
-radius_bottom_left = 0
-radius_bottom_right = 0
-radius_top_left = 0
-radius_top_right = 0
+radius_bottom_left = 10
+radius_bottom_right = 10
+radius_top_left = 10
+radius_top_right = 10
 reserve_space = true
 shadow = true
 show_dots = true
@@ -213,7 +213,7 @@ sunset = ""
 
 [lockscreen]
 allow_empty_password = false
-blur_intensity = 0.69999998807907104
+blur_intensity = 0.29999999329447746
 blurred_desktop = false
 enabled = true
 fingerprint = true
@@ -370,7 +370,7 @@ clipboard_confirm_clear_history = true
 clipboard_enabled = true
 clipboard_history_max_entries = 100
 clipboard_image_action_command = ""
-corner_radius_scale = 0.0
+corner_radius_scale = 1.0000000149011612
 date_format = "%A, %x"
 disable_mipmaps = false
 external_ip_enabled = false
@@ -569,7 +569,7 @@ source = "wallpaper"
 wallpaper_scheme = "muted"
 
     [theme.templates]
-    builtin_ids = [ "btop", "cava", "gtk3", "gtk4", "hyprland", "kcolorscheme", "kitty", "qt" ]
+    builtin_ids = [ "btop", "cava", "foot", "gtk3", "gtk4", "hyprland", "kcolorscheme", "qt" ]
     community_ids = [ "discord", "zed", "heroiclauncher", "prismlauncher", "steam", "obs", "hyprtoolkit", "lazygit", "yazi" ]
     enable_builtin_templates = true
     enable_community_templates = true
@@ -594,13 +594,13 @@ transition_on_startup = false
     recursive = true
 
     [wallpaper.default]
-    path = "/home/ingot/Pictures/Wallpapers/foggy_forest.png"
+    path = "/home/ingot/Pictures/Wallpapers/majula.jpg"
 
     [wallpaper.last]
-    path = "/home/ingot/Pictures/Wallpapers/foggy_forest.png"
+    path = "/home/ingot/Pictures/Wallpapers/majula.jpg"
 
     [wallpaper.monitors.DP-1]
-    path = "/home/ingot/Pictures/Wallpapers/foggy_forest.png"
+    path = "/home/ingot/Pictures/Wallpapers/majula.jpg"
 
 [weather]
 effects = true
@@ -633,7 +633,7 @@ type = "brightness"
 [widget.clock]
 capsule_radius = 5
 font_family = "Maple Mono NF ExtraBold"
-format = "{:%H:%M}"
+format = "{:%m.%d  %H:%M}"
 type = "clock"
 
 [widget.cpu]
@@ -651,6 +651,9 @@ type = "volume"
 [widget.keyboard_layout]
 hide_when_single_layout = false
 type = "keyboard_layout"
+
+[widget.launcher]
+glyph = "brand-apple-filled"
 
 [widget.lock_keys]
 display = "short"
@@ -712,6 +715,6 @@ show_label = false
 type = "volume"
 
 [widget.workspaces]
-font_scale = 1.1699999999999999
+font_scale = 1.22
 label_source = "name"
 max_label_chars = 4

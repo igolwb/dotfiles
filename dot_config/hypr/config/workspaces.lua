@@ -3,11 +3,16 @@ hl.workspace_rule({ workspace = "1", monitor = "DP-1", persistent = true })
 hl.workspace_rule({ workspace = "2", monitor = "DP-1", persistent = true })
 
 hl.workspace_rule({
-    workspace = "1",
-    layout = "scrolling",
+	workspace = "1",
+	layout = "scrolling",
 })
 
 hl.workspace_rule({
-    workspace = "2",
-    layout = "dwindle",
+	workspace = "2",
+	layout = "dwindle",
+})
+
+hl.workspace_rule({
+	workspace = "3",
+	layout = "dwindle",
 })

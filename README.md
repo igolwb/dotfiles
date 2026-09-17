@@ -4,8 +4,8 @@ This is my first Linux rice and after spending plenty of time tweaking it to my 
 
 This setup is supposed to be comfortable and productive, although im jealous of other rices with huge window gaps i wanted to maximize the space available for windows, so i could have more space for text on my code editor
 
-
 ## Showcase
+
 <p align="center">
   <img src="./showcase/showcase1.png" style="width: 100%;">
 </p>
@@ -18,21 +18,20 @@ This setup is supposed to be comfortable and productive, although im jealous of 
   <img src="./showcase/showcase3.png" style="width: 100%;">
 </p>
 
-
 ## Dependencies
+
 List of important dependencies to know before applying the config:
 
-[hyprland 0.55+](https://github.com/hyprwm/Hyprland), 
-[Noctalia V5.0.0beta1+](https://github.com/noctalia-dev/noctalia), 
-[Mapple Mono NF](https://github.com/subframe7536/maple-font), 
-
+[hyprland 0.55+](https://github.com/hyprwm/Hyprland),
+[Noctalia V5.0.0beta1+](https://github.com/noctalia-dev/noctalia),
+[Mapple Mono NF](https://github.com/subframe7536/maple-font),
 
 ## Installing Packages & Applying Config
 
 This is based on what packages already are installed in cachyOS, you can just remove any packages you don't need before running
 
-``` bash
-sudo pacman -S yay chezmoi zed zen-browser spotify-launcher yazi lazygit lazydocker ddcutil nvim httpie tmux vesktop prismlauncher lact protonup-qt
+```bash
+sudo pacman -S yay chezmoi zed zen-browser foot spotify-launcher yazi lazygit lazydocker ddcutil nvim httpie tmux vesktop prismlauncher lact protonup-qt
 ```
 
 After installing the packages you can apply it using chezmoi, or by just cloning the repo and overwriting your ~/.config

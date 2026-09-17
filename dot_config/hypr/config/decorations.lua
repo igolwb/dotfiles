@@ -8,14 +8,14 @@ hl.config({
 	},
 	decoration = {
 		dim_special = 0.3,
-		rounding = 0,
+		rounding = 10,
 		active_opacity = 1,
 		fullscreen_opacity = 1,
 		-- Look and feel configuration
 		blur = {
 			enabled = true,
-			size = 3,
-			passes = 3,
+			size = 1,
+			passes = 4,
 			special = true,
 		},
 		shadow = {
