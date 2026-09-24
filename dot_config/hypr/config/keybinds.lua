@@ -1,208 +1,286 @@
 local mainMod = "SUPER"
 local ipc = "noctalia msg "
 local launchPrefix = "uwsm app -- " -- if you are not using UWSM, make this empty (e.g. "")
-
-local layouts = { "dwindle", "master", "scrolling, monocle" }
-local workspace_layouts = {}
+local column_full = false
 
 local function layout_bind(bind_table)
-	return function()
-		local workspace = hl.get_active_special_workspace() or hl.get_active_workspace()
+    return function()
+        local workspace = hl.get_active_special_workspace() or hl.get_active_workspace()
 
-		if not workspace then
-			return
-		end
+        if not workspace then
+            return
+        end
 
-		local layout = workspace.tiled_layout
+        local layout = workspace.tiled_layout
 
-		if bind_table[layout] then
-			hl.dispatch(bind_table[layout])
-		end
-	end
+        if bind_table[layout] then
+            hl.dispatch(bind_table[layout])
+        end
+    end
 end
----------------------------
----- window management ----
----------------------------
 
-hl.bind(mainMod .. " + Escape", hl.dsp.exec_cmd("hyprctl kill"))
-hl.bind(mainMod .. " + Q", hl.dsp.window.close())
-hl.bind(mainMod .. " + ALT + Space", hl.dsp.window.float({ action = "toggle" }))
-hl.bind(mainMod .. " + F", hl.dsp.window.fullscreen({ mode = 1 }))
-hl.bind(mainMod .. " + SHIFT + F", hl.dsp.window.fullscreen())
-hl.bind(mainMod .. " + ALT + Left", hl.dsp.layout("swapcol l"))
-hl.bind(mainMod .. " + ALT + Right", hl.dsp.layout("swapcol r"))
+local function toggle_column_width()
+    if column_full then
+        hl.dispatch(hl.dsp.layout("colresize 0.5"))
+        column_full = false
+    else
+        hl.dispatch(hl.dsp.layout("colresize 1.0"))
+        column_full = true
+    end
+end
 
-hl.bind(mainMod .. " + R", function()
-	hl.dispatch(hl.dsp.layout("colresize +conf"))
-end)
+------------------------------------
+---- window & workspace movement----
+------------------------------------
 
--- Change focus
+-- focus
 
-hl.bind(
-	"SUPER + Left",
-	layout_bind({
-		monocle = hl.dsp.layout("cycleprev"),
-	})
-)
-
-hl.bind(
-	"SUPER + Right",
-	layout_bind({
-		monocle = hl.dsp.layout("cyclenext"),
-	})
-)
-
-hl.bind(mainMod .. " + Left", hl.dsp.focus({ direction = "left" }))
+--normal movement
+hl.bind(mainMod .. " + Left", layout_bind({
+        monocle =              hl.dsp.layout("cycleprev"),
+    }))
+hl.bind(mainMod .. " + Right", layout_bind({
+        monocle =              hl.dsp.layout("cyclenext"),
+}))
+hl.bind(mainMod .. " + Left",  hl.dsp.focus({ direction = "left" }))
+hl.bind(mainMod .. " + Down",  hl.dsp.focus({ direction = "down" }))
+hl.bind(mainMod .. " + Up",    hl.dsp.focus({ direction = "up" }))
 hl.bind(mainMod .. " + Right", hl.dsp.focus({ direction = "right" }))
-hl.bind(mainMod .. " + Up", hl.dsp.focus({ direction = "up" }))
-hl.bind(mainMod .. " + Down", hl.dsp.focus({ direction = "down" }))
-hl.bind("ALT + Tab", hl.dsp.window.cycle_next())
+-- normal movement
+
+-- hjkl movement
+hl.bind(mainMod .. " + H", layout_bind({
+        monocle =          hl.dsp.layout("cycleprev"),
+    }))
+hl.bind(mainMod .. " + L", layout_bind({
+        monocle =          hl.dsp.layout("cyclenext"),
+}))
+hl.bind(mainMod .. " + H", hl.dsp.focus({ direction = "left" }))
+hl.bind(mainMod .. " + J", hl.dsp.focus({ direction = "down" }))
+hl.bind(mainMod .. " + K", hl.dsp.focus({ direction = "up" }))
+hl.bind(mainMod .. " + L", hl.dsp.focus({ direction = "right" }))
+-- hjkl movement
+
+hl.bind("ALT + Tab",       hl.dsp.window.cycle_next())
 
 -- move active window around workspaces & monitors
 
-hl.bind(mainMod .. " + SHIFT + left", hl.dsp.window.move({ direction = "l" }))
+-- normal movement
+hl.bind(mainMod .. " + SHIFT + left",  hl.dsp.window.move({ direction = "l" }))
+hl.bind(mainMod .. " + SHIFT + Down",  hl.dsp.window.move({ direction = "d" }))
+hl.bind(mainMod .. " + SHIFT + Up",    hl.dsp.window.move({ direction = "u" }))
 hl.bind(mainMod .. " + SHIFT + Right", hl.dsp.window.move({ direction = "r" }))
-hl.bind(mainMod .. " + SHIFT + Up", hl.dsp.window.move({ direction = "u" }))
-hl.bind(mainMod .. " + SHIFT + Down", hl.dsp.window.move({ direction = "d" }))
-hl.bind(mainMod .. " + SHIFT + 1", hl.dsp.window.move({ monitor = MONITOR1 }))
-hl.bind(mainMod .. " + SHIFT + 2", hl.dsp.window.move({ monitor = MONITOR2 }))
-hl.bind(mainMod .. " + SHIFT + 3", hl.dsp.window.move({ monitor = MONITOR3 }))
-hl.bind(mainMod .. " + SHIFT + mouse_up", hl.dsp.window.move({ monitor = "+1" }))
+hl.bind(mainMod .. " + ALT + Left",    hl.dsp.layout("swapcol l"))
+hl.bind(mainMod .. " + ALT + Right",   hl.dsp.layout("swapcol r"))
+-- normal movement
+
+-- hjkl movement
+hl.bind(mainMod .. " + SHIFT + H",  hl.dsp.window.move({ direction = "l" }))
+hl.bind(mainMod .. " + SHIFT + J",  hl.dsp.window.move({ direction = "d" }))
+hl.bind(mainMod .. " + SHIFT + K",  hl.dsp.window.move({ direction = "u" }))
+hl.bind(mainMod .. " + SHIFT + L",  hl.dsp.window.move({ direction = "r" }))
+-- hjkl movement
+
+hl.bind(mainMod .. " + ALT + H",    hl.dsp.layout("swapcol l"))
+hl.bind(mainMod .. " + ALT + L",    hl.dsp.layout("swapcol r"))
+
+hl.bind(mainMod .. " + SHIFT + 1",  hl.dsp.window.move({ monitor = MONITOR1 }))
+hl.bind(mainMod .. " + SHIFT + 2",  hl.dsp.window.move({ monitor = MONITOR2 }))
+hl.bind(mainMod .. " + SHIFT + 3",  hl.dsp.window.move({ monitor = MONITOR3 }))
+hl.bind(mainMod .. " + SHIFT + mouse_up",   hl.dsp.window.move({ monitor = "+1" }))
 hl.bind(mainMod .. " + SHIFT + mouse_down", hl.dsp.window.move({ monitor = "-1" }))
-hl.bind(mainMod .. " + CONTROL + SHIFT + Right", hl.dsp.window.move({ workspace = "r+1" }))
-hl.bind(mainMod .. " + CONTROL + SHIFT + Left", hl.dsp.window.move({ workspace = "r-1" }))
-hl.bind(mainMod .. " + CONTROL + SHIFT + mouse_up", hl.dsp.window.move({ workspace = "r+1" }))
+
+-- normal movement
+hl.bind(mainMod .. " + CONTROL + SHIFT + Left",       hl.dsp.window.move({ workspace = "r-1" }))
+hl.bind(mainMod .. " + CONTROL + SHIFT + Right",      hl.dsp.window.move({ workspace = "r+1" }))
+-- normal movement
+
+-- hjkl movement
+hl.bind(mainMod .. " + CONTROL + SHIFT + H",          hl.dsp.window.move({ workspace = "r-1" }))
+hl.bind(mainMod .. " + CONTROL + SHIFT + L",          hl.dsp.window.move({ workspace = "r+1" }))
+-- hjkl movement
+
+hl.bind(mainMod .. " + CONTROL + SHIFT + mouse_up",   hl.dsp.window.move({ workspace = "r+1" }))
 hl.bind(mainMod .. " + CONTROL + SHIFT + mouse_down", hl.dsp.window.move({ workspace = "r-1" }))
-for i = 1, NUM_WPM do
-	local key = i % 10
-	hl.bind(mainMod .. " + SHIFT + CONTROL + " .. key, hl.dsp.window.move({ workspace = "m~" .. i }))
-end
+
 
 -- move to adjacent workspaces and next empty on a given monitor
+
+-- normal movement
+hl.bind(mainMod .. " + CONTROL + Left",  hl.dsp.focus({ workspace = "m-1" }))
+hl.bind(mainMod .. " + CONTROL + Down",  hl.dsp.focus({ workspace = "emptym" }))
 hl.bind(mainMod .. " + CONTROL + Right", hl.dsp.focus({ workspace = "m+1" }))
-hl.bind(mainMod .. " + CONTROL + Left", hl.dsp.focus({ workspace = "m-1" }))
-hl.bind(mainMod .. " + CONTROL + Down", hl.dsp.focus({ workspace = "emptym" }))
+-- normal movement
+
+-- hjkl movement
+hl.bind(mainMod .. " + CONTROL + H",     hl.dsp.focus({ workspace = "m-1" }))
+hl.bind(mainMod .. " + CONTROL + J",     hl.dsp.focus({ workspace = "emptym" }))
+hl.bind(mainMod .. " + CONTROL + L",     hl.dsp.focus({ workspace = "m+1" }))
+-- hjkl movement
 
 -- scroll through existing workspaces & monitors
-hl.bind(mainMod .. " + mouse_down", hl.dsp.focus({ workspace = "m+1" }))
-hl.bind(mainMod .. " + mouse_up", hl.dsp.focus({ workspace = "m-1" }))
-hl.bind(mainMod .. " + CONTROL + mouse_up", hl.dsp.focus({ workspace = "m+1" }))
+hl.bind(mainMod .. " + mouse_down",           hl.dsp.focus({ workspace = "m+1" }))
+hl.bind(mainMod .. " + mouse_up",             hl.dsp.focus({ workspace = "m-1" }))
+hl.bind(mainMod .. " + CONTROL + mouse_up",   hl.dsp.focus({ workspace = "m+1" }))
 hl.bind(mainMod .. " + CONTROL + mouse_down", hl.dsp.focus({ workspace = "m-1" }))
 
--- move & Resize with mouse
-hl.bind(mainMod .. " + mouse:272", hl.dsp.window.drag())
-hl.bind(mainMod .. " + mouse:273", hl.dsp.window.resize())
+-- move through workspaces and monitors with 1-10 keys
+for i = 1, NUM_WPM do
+    local key = i % 10
+    hl.bind(mainMod .. " + SHIFT + " .. key, hl.dsp.window.move({ workspace = "m~" .. i }))
+    hl.bind(mainMod .. " + CONTROL + " .. key, hl.dsp.focus({ workspace = "m~" .. i }))
+    hl.bind(mainMod .. " + " .. key, hl.dsp.focus({ workspace = i }))
+end
+
+
+--------------------------------------
+---- window & workspace management----
+--------------------------------------
+
+hl.bind(mainMod .. " + Escape",      hl.dsp.exec_cmd("hyprctl kill"))
+hl.bind(mainMod .. " + Q", hl.dsp.window.close())
+
+-- shoutout github.com/43PR for the genius toggle float function
+hl.bind(mainMod .. " + S", function()
+    hl.dispatch(hl.dsp.window.float({ action = "toggle" }))
+
+    local w = hl.get_active_window()
+    if w ~= nil and w.floating then
+        local mon = hl.get_active_monitor()
+        if mon ~= nil then
+            local target_w = math.floor(mon.width * 0.7)
+            local target_h = math.floor(mon.height * 0.7)
+
+            -- absolute resize (relative = false), not a delta
+            hl.dispatch(hl.dsp.window.resize({ x = target_w, y = target_h, relative = false }))
+
+            local mon_x = mon.x or 0
+            local mon_y = mon.y or 0
+            local target_x = mon_x + math.floor((mon.width - target_w) / 2)
+            local target_y = mon_y + math.floor((mon.height - target_h) / 2)
+
+            -- absolute move to the centered position
+            hl.dispatch(hl.dsp.window.move({ x = target_x, y = target_y, relative = false }))
+        end
+    end
+end)
+
+-- toggle fullscreen
+hl.bind(mainMod .. " + F", layout_bind({
+    dwindle      =                   hl.dsp.window.fullscreen({ mode = 1 }),
+    monocle      =                   hl.dsp.window.fullscreen({ mode = 1 }),
+    master       =                   hl.dsp.window.fullscreen({ mode = 1 }),
+    ["lua:grid"] =                   hl.dsp.window.fullscreen({ mode = 1 })
+}))
+hl.bind(mainMod .. " + F", toggle_column_width)
+
+hl.bind(mainMod .. " + SHIFT + F",   hl.dsp.window.fullscreen())
+hl.bind(mainMod .. " + R", function()
+    hl.dispatch(                     hl.dsp.layout("colresize +conf"))
+end)
+
+
+
+-- move & Resize with mouse & keyboard
+hl.bind(mainMod .. " + mouse:272",     hl.dsp.window.drag())
+hl.bind(mainMod .. " + mouse:273",     hl.dsp.window.resize())
 
 hl.bind(mainMod .. " + SHIFT + equal", hl.dsp.window.resize({ x = 10, y = 0, relative = true }), { repeating = true })
 hl.bind(mainMod .. " + SHIFT + minus", hl.dsp.window.resize({ x = -10, y = 0, relative = true }), { repeating = true })
-hl.bind(mainMod .. " + equal", hl.dsp.window.resize({ x = 0, y = 10, relative = true }), { repeating = true })
-hl.bind(mainMod .. " + minus", hl.dsp.window.resize({ x = 0, y = -10, relative = true }), { repeating = true })
+hl.bind(mainMod .. " + equal",         hl.dsp.window.resize({ x = 0, y = 10, relative = true }), { repeating = true })
+hl.bind(mainMod .. " + minus",         hl.dsp.window.resize({ x = 0, y = -10, relative = true }), { repeating = true })
+
+--change layouts per workspace
+--master and monocle are disabled, you can add them to the array
+hl.bind("SUPER + Tab", function()
+    local layouts = { "scrolling", "lua:grid", "dwindle",  }
+    local workspace = hl.get_active_workspace()
+    if hl.get_active_special_workspace() then
+        workspace = hl.get_active_special_workspace()
+    end
+
+    local next_layout = "dwindle"
+
+    if not workspace then
+        return
+    end
+
+    for i = 1, #layouts do
+        if layouts[i] == workspace.tiled_layout then
+            local next_layout_idx = (i % #layouts) + 1
+            next_layout = layouts[next_layout_idx]
+            break
+        end
+    end
+
+    if workspace.special then
+        hl.workspace_rule({ workspace = tostring(workspace.name), layout = next_layout })
+    else
+        hl.workspace_rule({ workspace = tostring(workspace.id), layout = next_layout })
+    end
+end)
 
 ------------------
----- launcher ---
+---- launcher ----
 ------------------
 
-hl.bind(mainMod .. " + T", hl.dsp.exec_cmd(launchPrefix .. TERMINAL))
-hl.bind(mainMod .. " + D", hl.dsp.exec_cmd(launchPrefix .. TERMINAL .. " -e yazi"))
-hl.bind(mainMod .. " + E", hl.dsp.exec_cmd(launchPrefix .. EDITOR))
-hl.bind(mainMod .. " + W", hl.dsp.exec_cmd(launchPrefix .. BROWSER))
+hl.bind(mainMod .. " + T",          hl.dsp.exec_cmd(launchPrefix .. TERMINAL))
+hl.bind(mainMod .. " + D",          hl.dsp.exec_cmd(launchPrefix .. TERMINAL .. " -e yazi"))
+hl.bind(mainMod .. " + E",          hl.dsp.exec_cmd(launchPrefix .. EDITOR))
+hl.bind(mainMod .. " + W",          hl.dsp.exec_cmd(launchPrefix .. BROWSER))
+hl.bind(mainMod .. "+Space",        hl.dsp.exec_cmd(ipc .. "panel-toggle launcher"))
+hl.bind(mainMod .. " + B",          hl.dsp.exec_cmd(ipc .. "bar-toggle"))
+hl.bind(mainMod .. " + X",          hl.dsp.exec_cmd(ipc .. "panel-toggle control-center"))
+hl.bind(mainMod .. " + N",          hl.dsp.exec_cmd(ipc .. "panel-toggle control-center notifications"))
+hl.bind(mainMod .. " + V",          hl.dsp.exec_cmd(ipc .. "panel-toggle control-center audio"))
+hl.bind(mainMod .. " + ALT + C",    hl.dsp.exec_cmd(ipc .. "panel-toggle session"))
+hl.bind(mainMod .. " + Z",          hl.dsp.exec_cmd(ipc .. "settings-toggle"))
+hl.bind("ALT + Tab",                hl.dsp.exec_cmd(ipc .. "window-switcher"))
 hl.bind("CONTROL + SHIFT + Escape", hl.dsp.exec_cmd(launchPrefix .. TERMINAL .. " -e btop"))
-hl.bind(mainMod .. "+Space", hl.dsp.exec_cmd(ipc .. "panel-toggle launcher"))
-hl.bind(mainMod .. " + ALT + L", hl.dsp.exec_cmd(ipc .. "session lock"))
-hl.bind(mainMod .. " + B", hl.dsp.exec_cmd(ipc .. "bar-toggle"))
-hl.bind(mainMod .. " + X", hl.dsp.exec_cmd(ipc .. "panel-toggle control-center"))
-hl.bind(mainMod .. " + N", hl.dsp.exec_cmd(ipc .. "panel-toggle control-center notifications"))
-hl.bind(mainMod .. " + V", hl.dsp.exec_cmd(ipc .. "panel-toggle control-center audio"))
-hl.bind(mainMod .. " + ALT + C", hl.dsp.exec_cmd(ipc .. "panel-toggle session"))
-hl.bind(mainMod .. " + Z", hl.dsp.exec_cmd(ipc .. "settings-toggle"))
-hl.bind("ALT + Tab", hl.dsp.exec_cmd(ipc .. "window-switcher"))
-
----------------------------
----- hardware controls ----
----------------------------
-
--- audio
-
--- Media
-hl.bind(mainMod .. " + A", hl.dsp.exec_cmd(ipc .. "media toggle"), { locked = true })
-hl.bind("XF86AudioPlay", hl.dsp.exec_cmd(ipc .. "media toggle"), { locked = true })
-hl.bind("XF86AudioPause", hl.dsp.exec_cmd(ipc .. "media toggle"), { locked = true })
-hl.bind("XF86AudioNext", hl.dsp.exec_cmd(ipc .. "media next"), { locked = true })
-hl.bind("XF86AudioPrev", hl.dsp.exec_cmd(ipc .. "media previous"), { locked = true })
-
--- Brightness
-hl.bind("XF86MonBrightnessUp", hl.dsp.exec_cmd(ipc .. "brightness-up"), { locked = true, repeating = true })
-hl.bind("XF86MonBrightnessDown", hl.dsp.exec_cmd(ipc .. "brightness-down"), { locked = true, repeating = true })
-hl.bind(mainMod .. " + CONTROL + equal", hl.dsp.exec_cmd(ipc .. "brightness-up"), { locked = true, repeating = true })
-hl.bind(mainMod .. " + CONTROL + minus", hl.dsp.exec_cmd(ipc .. "brightness-down"), { locked = true, repeating = true })
 
 -------------------
----- UTILITIES ----
+---- ltilities ----
 -------------------
 
--- Screen Capture
+-- screen capture
 hl.bind(mainMod .. " + P", hl.dsp.exec_cmd(ipc .. " screenshot-region"))
 
--- Theming and Wallpaper
+-- theming and wallpaper
 hl.bind(mainMod .. " + SHIFT + W", hl.dsp.exec_cmd(ipc .. " panel-toggle launcher /wall "))
 hl.bind(mainMod .. " + SHIFT + X", hl.dsp.exec_cmd(ipc .. " wallpaper-random"))
 
--- Clipboard
+-- clipboard
 hl.bind(mainMod .. " + C", hl.dsp.exec_cmd(ipc .. " panel-toggle clipboard"))
 
--- Zoom
+-- zoom
 local MAX_ZOOM = 3
 local MIN_ZOOM = 1
 local ZOOM_TOGGLE_FACTOR = 1.7
-
 ---@param offset number
 ---@return nil
 local function zoom(offset)
-	local current = hl.get_config("cursor.zoom_factor")
-	if offset ~= nil then
-		current = current + offset
-	elseif current ~= MIN_ZOOM then
-		current = MIN_ZOOM
-	else
-		current = ZOOM_TOGGLE_FACTOR
-	end
-	current = math.max(MIN_ZOOM, math.min(MAX_ZOOM, current))
-	hl.config({ cursor = { zoom_factor = current } })
+    local current = hl.get_config("cursor.zoom_factor")
+    if offset ~= nil then
+        current = current + offset
+    elseif current ~= MIN_ZOOM then
+        current = MIN_ZOOM
+    else
+        current = ZOOM_TOGGLE_FACTOR
+    end
+    current = math.max(MIN_ZOOM, math.min(MAX_ZOOM, current))
+    hl.config({ cursor = { zoom_factor = current } })
 end
-
 hl.bind("SUPER + SHIFT + Z", zoom)
 
---------------------
----- WORKSPACES ----
---------------------
+-- media
+hl.bind(mainMod .. " + A", hl.dsp.exec_cmd(ipc .. "media toggle"), { locked = true })
+hl.bind("XF86AudioPlay",   hl.dsp.exec_cmd(ipc .. "media toggle"), { locked = true })
+hl.bind("XF86AudioPause",  hl.dsp.exec_cmd(ipc .. "media toggle"), { locked = true })
+hl.bind("XF86AudioNext",   hl.dsp.exec_cmd(ipc .. "media next"), { locked = true })
+hl.bind("XF86AudioPrev",   hl.dsp.exec_cmd(ipc .. "media previous"), { locked = true })
 
---Change layouts per workspace
-
-hl.bind("SUPER + Tab", function()
-	local layouts = { "scrolling", "dwindle", "master", "monocle" }
-	local workspace = hl.get_active_workspace()
-	if hl.get_active_special_workspace() then
-		workspace = hl.get_active_special_workspace()
-	end
-
-	local next_layout = "dwindle"
-
-	if not workspace then
-		return
-	end
-
-	for i = 1, #layouts do
-		if layouts[i] == workspace.tiled_layout then
-			local next_layout_idx = (i % #layouts) + 1
-			next_layout = layouts[next_layout_idx]
-			break
-		end
-	end
-
-	if workspace.special then
-		hl.workspace_rule({ workspace = tostring(workspace.name), layout = next_layout })
-	else
-		hl.workspace_rule({ workspace = tostring(workspace.id), layout = next_layout })
-	end
-end)
-
+-- brightness
+hl.bind("XF86MonBrightnessUp",           hl.dsp.exec_cmd(ipc .. "brightness-up"), { locked = true, repeating = true })
+hl.bind("XF86MonBrightnessDown",         hl.dsp.exec_cmd(ipc .. "brightness-down"), { locked = true, repeating = true })
+hl.bind(mainMod .. " + CONTROL + equal", hl.dsp.exec_cmd(ipc .. "brightness-up"), { locked = true, repeating = true })
+hl.bind(mainMod .. " + CONTROL + minus", hl.dsp.exec_cmd(ipc .. "brightness-down"), { locked = true, repeating = true })

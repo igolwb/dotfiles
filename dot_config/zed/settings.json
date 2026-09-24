@@ -16,7 +16,7 @@
   "disable_ai": false,
   "vertical_scroll_margin": 18.0,
   "scroll_beyond_last_line": "one_page",
-  "format_on_save": "on",
+  "format_on_save": "off",
   "preferred_line_length": 120,
   "collaboration_panel": {
     "button": false,
@@ -194,6 +194,6 @@
   "theme": {
     "mode": "dark",
     "light": "Old Book",
-    "dark": "Noctalia Dark Transparent",
+    "dark": "Noctalia Dark",
   },
 }

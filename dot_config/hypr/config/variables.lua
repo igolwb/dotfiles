@@ -5,7 +5,6 @@ TERMINAL = "foot"
 FILE_MANAGER = "yazi"
 BROWSER = "zen-browser"
 EDITOR = "zeditor"
-CALCULATOR = "gnome-calculator"
 
 -- Monitors
 MONITOR1 = ""
@@ -14,4 +13,4 @@ MONITOR3 = ""
 PRIMARY_MONITOR = MONITOR1
 
 -- Workspaces
-NUM_WPM = 3 -- Number of workspaces per monitor (Max 10)
+NUM_WPM = 5 -- Number of workspaces per monitor (Max 10)
