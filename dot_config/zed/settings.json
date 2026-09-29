@@ -16,7 +16,7 @@
   "disable_ai": false,
   "vertical_scroll_margin": 18.0,
   "scroll_beyond_last_line": "one_page",
-  "format_on_save": "off",
+  "format_on_save": "on",
   "preferred_line_length": 120,
   "collaboration_panel": {
     "button": false,
@@ -30,6 +30,7 @@
   },
   "zoomed_padding": true,
   "minimap": {
+    "thumb_border": "full",
     "thumb": "always",
     "show": "never",
   },
@@ -151,7 +152,7 @@
       "model": "ornith-coder:latest",
       "enable_thinking": true,
     },
-    "dock": "bottom",
+    "dock": "right",
     "favorite_models": [],
     "model_parameters": [],
   },

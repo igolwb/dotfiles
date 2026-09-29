@@ -19,7 +19,6 @@
     "workbench.statusBar.visible": false,
     "terminal.integrated.fontFamily": "'Maple Mono NF SemiBold', monospace",
     "terminal.integrated.fontSize": 15,
-    "workbench.experimental.modernUI": true,
     "window.density.layout": "compact",
     "chat.editor.fontFamily": "'Maple Mono NF SemiBold', monospace",
     "chat.editor.fontSize": 15,
@@ -35,5 +34,8 @@
     "errorLens.fontFamily": "'Maple Mono NF SemiBold', monospace",
     "workbench.activityBar.location": "top",
     "window.menuBarVisibility": "compact",
-    "terminal.integrated.lineHeight": 1
+    "terminal.integrated.lineHeight": 1,
+    "workbench.colorTheme": "Dark Modern Darker",
+    "git.confirmSync": false,
+    "git.autofetch": true
 }

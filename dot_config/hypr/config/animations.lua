@@ -40,3 +40,5 @@ hl.animation({ leaf = "specialWorkspaceOut", enabled = true, speed = 1.2, bezier
 
 -- zoom
 hl.animation({ leaf = "zoomFactor", enabled = true, speed = 3, bezier = "standardDecel" })
+
+

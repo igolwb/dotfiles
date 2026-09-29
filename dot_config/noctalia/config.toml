@@ -39,9 +39,9 @@ order = [ "default" ]
     hover_highlight = true
     layer = "top"
     margin_edge = 6
-    margin_ends = 7
+    margin_ends = 0
     margin_opposite_edge = 0
-    padding = 10
+    padding = 20
     panel_overlap = 0
     position = "top"
     radius = 0
@@ -55,7 +55,7 @@ order = [ "default" ]
     show_on_workspace_switch = true
     smart_auto_hide = false
     start = [ "workspaces" ]
-    thickness = 15
+    thickness = 16
     widget_spacing = 13
 
 [battery]
@@ -65,7 +65,7 @@ warning_threshold = 10
 enable_ddcutil = true
 ignore_mmids = []
 minimum_brightness = 0.0
-sync_all_monitors = false
+sync_all_monitors = true
 
 [calendar]
 enabled = false
@@ -74,9 +74,9 @@ refresh_minutes = 15
 [control_center]
 hidden_tabs = [ "screen-time" ]
 shortcuts = []
-sidebar = "compact"
+sidebar = "full"
 sidebar_section = "full"
-width = 700
+width = 900
 
     [control_center.calendar]
     show_events_card = true
@@ -107,7 +107,7 @@ inactive_scale = 1.0
 item_spacing = 0
 launcher_custom_image = ""
 launcher_custom_image_colorize = false
-launcher_icon = "brand-finder"
+launcher_icon = "apps-filled"
 launcher_position = "start"
 magnification = true
 magnification_scale = 1.2500000037252903
@@ -213,7 +213,7 @@ sunset = ""
 
 [lockscreen]
 allow_empty_password = false
-blur_intensity = 0.29999999329447746
+blur_intensity = 0.0
 blurred_desktop = false
 enabled = true
 fingerprint = true
@@ -222,7 +222,7 @@ tint_intensity = 0.0
 wallpaper = ""
 
 [lockscreen_widgets]
-enabled = false
+enabled = true
 schema_version = 2
 widget_order = [ "lockscreen-login-box@DP-1" ]
 
@@ -232,8 +232,8 @@ widget_order = [ "lockscreen-login-box@DP-1" ]
     visible = true
 
     [lockscreen_widgets.widget."lockscreen-login-box@DP-1"]
-    box_height = 196.0
-    box_width = 810.0
+    box_height = 70.0
+    box_width = 400.0
     cx = 960.0
     cy = 898.0
     enabled = true
@@ -250,7 +250,7 @@ widget_order = [ "lockscreen-login-box@DP-1" ]
         center_password_text = false
         input_opacity = 1.0
         input_radius = 6.0
-        layout = "regular"
+        layout = "compact"
         show_caps_lock = true
         show_keyboard_layout = true
         show_login_button = true
@@ -389,7 +389,7 @@ popup_borders = true
 popup_shadows = true
 screen_time_enabled = false
 settings_show_advanced = true
-settings_window_translucent = true
+settings_window_translucent = false
 setup_wizard_enabled = true
 shared_gl_context = true
 show_location = true
@@ -398,7 +398,7 @@ time_format = "{:%H:%M}"
 
     [shell.animation]
     enabled = true
-    speed = 1.0
+    speed = 0.70000001043081284
 
     [shell.greeter_sync]
     auto_sync = false
@@ -449,7 +449,7 @@ time_format = "{:%H:%M}"
 
     [shell.screen_corners]
     enabled = false
-    size = 13
+    size = 1
 
     [shell.screenshot]
     confirm_region = false
@@ -464,7 +464,7 @@ time_format = "{:%H:%M}"
 
     [shell.session]
     grid = false
-    grid_columns = 2
+    grid_columns = 3
     show_shortcuts = true
 
         [shell.session.power]
@@ -563,8 +563,8 @@ swap_pct_activity_threshold = 20.0
 swap_pct_critical_threshold = 80.0
 
 [theme]
-builtin = "Nord"
-community_palette = "ADW"
+builtin = "Ayu"
+community_palette = "Monochrome"
 custom_palette = ""
 mode = "dark"
 pure_black_dark = false
@@ -575,11 +575,11 @@ wallpaper_scheme = "muted"
     builtin_ids = [ "btop", "cava", "foot", "gtk3", "gtk4", "hyprland", "kcolorscheme", "qt" ]
     community_ids = [
         "discord",
-        "vscode",
         "zed",
         "heroiclauncher",
         "prismlauncher",
         "steam",
+        "fastfetch",
         "obs",
         "hyprtoolkit",
         "lazygit",
@@ -608,13 +608,13 @@ transition_on_startup = false
     recursive = true
 
     [wallpaper.default]
-    path = "/home/ingot/Pictures/Wallpapers/tu_bui_crashsite.png"
+    path = "Pictures/Wallpapers/odst.png"
 
     [wallpaper.last]
-    path = "/home/ingot/Pictures/Wallpapers/tu_bui_crashsite.png"
+    path = "Pictures/Wallpapers/odst.png"
 
     [wallpaper.monitors.DP-1]
-    path = "/home/ingot/Pictures/Wallpapers/tu_bui_crashsite.png"
+    path = "Pictures/Wallpapers/odst.png"
 
 [weather]
 effects = true
