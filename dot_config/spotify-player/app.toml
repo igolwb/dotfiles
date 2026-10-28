@@ -1,4 +1,4 @@
-client_id = "your-spotify-client-id"
+client_id = "b6ca28b89ce648f7831d5506e504f29e"
 ncspot_only_get_endpoints = [
     "me/playlists",
     "playlists/",
@@ -62,7 +62,7 @@ album_percent = 40
 [device]
 name = "spotify-player"
 device_type = "speaker"
-volume = 70
+volume = 50
 bitrate = 320
 audio_cache = false
 normalization = false

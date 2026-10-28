@@ -25,38 +25,38 @@ order = [ "default" ]
     capsule = false
     capsule_fill = "surface_variant"
     capsule_group = []
-    capsule_opacity = 0.99999997764825821
-    capsule_padding = 5.0
-    capsule_radius = 3
-    capsule_thickness = 1.0
-    center = [ "clock" ]
-    concave_edge_corners = false
+    capsule_opacity = 0.0
+    capsule_padding = 8.0
+    capsule_radius = 5
+    capsule_thickness = 0.69999998807907104
+    center = [ "workspaces" ]
+    concave_edge_corners = true
     contact_shadow = false
     enabled = true
-    end = [ "media", "volume", "network", "notifications", "battery" ]
+    end = [ "notifications", "battery" ]
     font_family = "Maple Mono NF"
     font_weight = 800
     hover_highlight = true
     layer = "top"
     margin_edge = 0
-    margin_ends = 0
+    margin_ends = 800
     margin_opposite_edge = 0
-    padding = 10
+    padding = 20
     panel_overlap = 0
     position = "top"
     radius = 0
-    radius_bottom_left = 0
-    radius_bottom_right = 0
-    radius_top_left = 0
-    radius_top_right = 0
+    radius_bottom_left = 10
+    radius_bottom_right = 10
+    radius_top_left = 10
+    radius_top_right = 10
     reserve_space = true
     scale = 0.85000002384185791
     shadow = false
     show_on_workspace_switch = true
     smart_auto_hide = false
-    start = [ "workspaces" ]
-    thickness = 20
-    widget_spacing = 13
+    start = [ "clock" ]
+    thickness = 24
+    widget_spacing = 8
 
 [battery]
 warning_threshold = 10
@@ -114,7 +114,6 @@ magnification_scale = 1.2500000037252903
 main_axis_padding = 2
 margin_edge = 5
 margin_ends = 0
-monitors = []
 pinned = []
 position = "bottom"
 radius = 0
@@ -123,7 +122,7 @@ radius_bottom_right = 10
 radius_top_left = 10
 radius_top_right = 10
 reserve_space = true
-shadow = true
+shadow = false
 show_dots = true
 show_instance_count = false
 show_running = true
@@ -219,10 +218,11 @@ enabled = true
 fingerprint = true
 monitors = []
 tint_intensity = 0.0
+transition = [ "fade", "zoom" ]
 wallpaper = ""
 
 [lockscreen_widgets]
-enabled = false
+enabled = true
 schema_version = 2
 widget_order = [ "lockscreen-login-box@DP-2", "lockscreen-login-box@DP-1" ]
 
@@ -232,10 +232,10 @@ widget_order = [ "lockscreen-login-box@DP-2", "lockscreen-login-box@DP-1" ]
     visible = true
 
     [lockscreen_widgets.widget."lockscreen-login-box@DP-1"]
-    box_height = 196.0
-    box_width = 720.0
-    cx = 1280.0
-    cy = 1080.0
+    box_height = 70.0
+    box_width = 400.0
+    cx = 960.0
+    cy = 876.0
     enabled = true
     output = "DP-1"
     placement_height = 1080.0
@@ -245,16 +245,17 @@ widget_order = [ "lockscreen-login-box@DP-2", "lockscreen-login-box@DP-1" ]
 
         [lockscreen_widgets.widget."lockscreen-login-box@DP-1".settings]
         background_color = "surface_variant"
-        background_opacity = 0.88
-        background_radius = 12.0
+        background_opacity = 1.0
+        background_radius = 10.0
         center_password_text = false
         input_opacity = 1.0
-        input_radius = 6.0
-        layout = "regular"
+        input_radius = 10.0
+        layout = "compact"
         show_caps_lock = true
         show_keyboard_layout = true
         show_login_button = true
         show_media = true
+        show_password_reveal = true
         show_session_buttons = true
         show_unlock_hint = true
         show_weather = true
@@ -282,6 +283,7 @@ widget_order = [ "lockscreen-login-box@DP-2", "lockscreen-login-box@DP-1" ]
         show_keyboard_layout = true
         show_login_button = true
         show_media = true
+        show_password_reveal = true
         show_session_buttons = true
         show_unlock_hint = true
         show_weather = true
@@ -328,16 +330,16 @@ widget_order = [ "lockscreen-login-box@DP-2", "lockscreen-login-box@DP-1" ]
         layout = "vertical"
 
 [nightlight]
-enabled = false
+enabled = true
 force = false
 temperature_day = 6300
-temperature_night = 5700
+temperature_night = 5800
 
 [notification]
 background_opacity = 0.39999999105930328
 border = true
 collapse_on_dismiss = true
-enable_daemon = true
+enable_daemon = false
 layer = "top"
 monitors = []
 offset_x = 20
@@ -400,7 +402,7 @@ clipboard_confirm_clear_history = true
 clipboard_enabled = true
 clipboard_history_max_entries = 100
 clipboard_image_action_command = ""
-corner_radius_scale = 0.0
+corner_radius_scale = 1.0000000149011612
 date_format = "%A, %x"
 disable_mipmaps = false
 external_ip_enabled = false
@@ -413,7 +415,7 @@ offline_mode = false
 password_style = "random"
 polkit_agent = true
 popup_borders = true
-popup_shadows = true
+popup_shadows = false
 screen_time_enabled = false
 settings_show_advanced = true
 settings_window_translucent = false
@@ -425,7 +427,7 @@ time_format = "{:%H:%M}"
 
     [shell.animation]
     enabled = true
-    speed = 0.70000001043081284
+    speed = 1.0000000149011612
 
     [shell.greeter_sync]
     auto_sync = false
@@ -436,6 +438,7 @@ time_format = "{:%H:%M}"
     categories = false
     compact = true
     fetch_exchange_rates = true
+    layout = "simple"
     provider_prefix = "/"
     show_icons = true
     sort_by_usage = true
@@ -464,7 +467,7 @@ time_format = "{:%H:%M}"
     polkit_position = "center"
     session_placement = "floating"
     session_position = "center"
-    shadow = true
+    shadow = false
     transparency_mode = "glass"
     wallpaper_placement = "floating"
     wallpaper_position = "center"
@@ -591,21 +594,22 @@ swap_pct_critical_threshold = 80.0
 
 [theme]
 builtin = "Gruvbox"
-community_palette = "Monochrome"
+community_palette = "Rose Pine Moon"
 custom_palette = ""
 mode = "dark"
 pure_black_dark = false
-source = "wallpaper"
-wallpaper_scheme = "m3-monochrome"
+source = "builtin"
+wallpaper_scheme = "muted"
 
     [theme.templates]
-    builtin_ids = [ "btop", "cava", "foot", "gtk3", "gtk4", "kcolorscheme", "mango", "qt" ]
+    builtin_ids = [ "btop", "cava", "foot", "gtk3", "gtk4", "hyprland", "kcolorscheme", "mango", "qt" ]
     community_ids = [
         "discord",
         "zed",
         "heroiclauncher",
         "prismlauncher",
         "steam",
+        "fuzzel",
         "fastfetch",
         "obs",
         "hyprtoolkit",
@@ -635,13 +639,13 @@ transition_on_startup = false
     recursive = true
 
     [wallpaper.default]
-    path = "Pictures/Wallpapers/background.png"
+    path = "Pictures/Wallpapers/wallhaven-mppjk9.jpg"
 
     [wallpaper.last]
-    path = "Pictures/Wallpapers/background.png"
+    path = "Pictures/Wallpapers/wallhaven-mppjk9.jpg"
 
     [wallpaper.monitors.DP-1]
-    path = "Pictures/Wallpapers/background.png"
+    path = "Pictures/Wallpapers/wallhaven-mppjk9.jpg"
 
 [weather]
 effects = true
@@ -674,8 +678,9 @@ type = "brightness"
 [widget.clock]
 capsule_radius = 5
 font_family = "Maple Mono NF ExtraBold"
-format = "{:%m.%d  %H:%M}"
+format = "{:%H:%M}"
 type = "clock"
+vertical_format = "{:%H : %M}"
 
 [widget.cpu]
 stat = "cpu_usage"
@@ -758,7 +763,7 @@ type = "volume"
 [widget.workspaces]
 active_pill_size = 2.0
 focused_output_only = true
-font_scale = 1.0
+font_scale = 1.01
 label_source = "name"
 max_label_chars = 4
 style = "minimal"
